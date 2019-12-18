@@ -1,0 +1,174 @@
+:root {
+  --primary-color: #cc0000;
+  --secondary-color: #7c0000;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  display: flex;
+  flex-direction: column;
+}
+
+.container {
+  width: 90%;
+  margin: 0 auto;
+  padding: 10px;
+  overflow: none;
+}
+
+.content {
+  flex: 1 0 auto;
+}
+
+//#####   SPLASH   #####
+#splash {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background-color: var(--primary-color);
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  transition: opacity 1s;
+
+  img {
+    width: 300px;
+  }
+
+  &.fade {
+    opacity: 0;
+  }
+}
+
+//#####   APP HEADER   #####
+.app-header {
+  background-color: var(--primary-color);
+  box-shadow: 3px 3px 10px #888;
+
+  .logo {
+    width: 170px;
+    margin-bottom: 16px;
+  }
+  .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 15px 10px;
+
+    input[type='text'] {
+      padding: 7px;
+      width: 300px;
+      border: 0;
+      border-radius: 3px;
+    }
+  }
+}
+
+//#####   SUB HEADER   #####
+.subheader {
+  background-color: var(--secondary-color);
+  color: white;
+  box-shadow: 3px 3px 10px #888;
+  margin: 0 auto 16px auto;
+  width: 90%;
+  font-size: 14px;
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  img {
+    width: 40px;
+  }
+
+  p {
+    margin: 4px;
+  }
+}
+
+//#####   GRID CONTAINER   #####
+.grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 10px;
+
+  .item {
+    display: flex;
+    flex-direction: column;
+    border: 1px #ccc solid;
+    padding: 10px;
+    box-shadow: 1px 1px 2px #ccc;
+
+    h4 {
+      margin-bottom: 5px;
+    }
+
+    p {
+      font-size: 14px;
+      color: var(--secondary-color);
+      font-weight: bold;
+      margin-bottom: 20px;
+    }
+
+    img {
+      width: 30px;
+      align-self: flex-end;
+    }
+  }
+
+  //#####   GRID DESKTOP   #####
+  @media (min-width: 768px) {
+    grid-template-columns: repeat(3, 1fr);
+    .item {
+      img {
+        width: 60px;
+      }
+    }
+  }
+}
+
+//#####   FOOTER   #####
+.app-footer {
+  background: #f4f4f4;
+  color: #444;
+  padding: 10px;
+  font-size: 14px;
+  margin-top: 10px;
+  flex-shrink: 0;
+
+  ul {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    list-style: none;
+
+    li {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+
+      i {
+        font-size: 22px;
+      }
+    }
+  }
+}
+
+@media (min-width: 768px) {
+}
